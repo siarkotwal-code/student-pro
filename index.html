@@ -1,187 +1,122 @@
+
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#5b5cf0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Student Pro</title>
 
 <script src="https://telegram.org/js/telegram-web-app.js?64"></script>
 
 <style>
 *{box-sizing:border-box}
-
 body{
-margin:0;
-background:#f6f7fb;
-color:#17182d;
-font-family:system-ui,Tahoma,Arial,sans-serif
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(135deg,#eef4ff,#f8f5ff);
+ color:#172033;
 }
-
-.app{
-max-width:520px;
-margin:auto;
-padding:18px 16px 90px
+.app{max-width:520px;margin:auto;padding:18px 16px 90px}
+header{
+ background:linear-gradient(135deg,#315bea,#7549e8);
+ color:white;
+ padding:22px;
+ border-radius:24px;
+ box-shadow:0 10px 30px #315bea30;
 }
-
-.hero{
-padding:24px;
-border-radius:26px;
-color:white;
-background:linear-gradient(135deg,#5859ee,#7b61ff 60%,#20c997);
-box-shadow:0 15px 35px #5b5cf044
-}
-
-.brand{
-font-size:27px;
-font-weight:800
-}
-
-.sub{
-font-size:13px;
-opacity:.9
-}
-
-.welcome{
-margin-top:20px
-}
-
-.title{
-font-size:18px;
-font-weight:800;
-margin:24px 2px 12px
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px
-}
-
+header h1{margin:0 0 6px;font-size:27px}
+header p{margin:0;opacity:.9}
 .card{
-background:white;
-border:1px solid #e9eaf2;
-border-radius:20px;
-padding:16px;
-box-shadow:0 8px 25px #2a2d5a12
+ background:white;
+ margin-top:15px;
+ padding:18px;
+ border-radius:20px;
+ box-shadow:0 5px 20px #17203312;
 }
-
-.wide{
-grid-column:1/-1
+h2{margin-top:0}
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
 }
-
-.icon{
-font-size:24px;
-margin-bottom:8px
+button{
+ width:100%;
+ border:0;
+ border-radius:15px;
+ padding:14px;
+ font-size:15px;
+ font-weight:bold;
+ cursor:pointer;
+ background:#315bea;
+ color:white;
 }
-
-.card h3{
-margin:0;
-font-size:15px
+button.secondary{background:#edf1ff;color:#315bea}
+button.green{background:#13a66b}
+button.orange{background:#f59b23}
+input,select{
+ width:100%;
+ padding:13px;
+ margin:7px 0;
+ border:1px solid #dbe1ee;
+ border-radius:12px;
+ font-size:16px;
 }
-
-.card p{
-font-size:12px;
-line-height:1.7;
-color:#777b91
-}
-
-.premium{
-background:linear-gradient(135deg,#181a38,#33377c);
-color:white
-}
-
-.premium p{
-color:#d7d9f0
-}
-
-.screen{
-display:none
-}
-
-.screen.active{
-display:block
-}
-
-.back{
-border:0;
-background:none;
-color:#5b5cf0;
-font-weight:700;
-padding:8px 0
-}
-
-.btn{
-width:100%;
-border:0;
-border-radius:14px;
-padding:12px;
-margin-top:10px;
-font-weight:700;
-background:#5b5cf0;
-color:white
-}
-
-.input{
-width:100%;
-padding:12px;
-border:1px solid #e5e6ef;
-border-radius:13px;
-margin:5px 0 10px
-}
-
 .result{
-padding:14px;
-background:#f0efff;
-border-radius:14px;
-text-align:center;
-font-weight:800;
-color:#3637a3
+ margin-top:12px;
+ padding:13px;
+ border-radius:12px;
+ background:#f0f4ff;
+ font-weight:bold;
 }
-
 .option{
-width:100%;
-padding:12px;
-margin:5px 0;
-border:1px solid #e5e6ef;
-background:white;
-border-radius:13px;
-text-align:right
+ background:#f4f6fb;
+ color:#172033;
+ text-align:left;
+ margin:7px 0;
 }
-
-.bottom{
-position:fixed;
-bottom:0;
-left:50%;
-transform:translateX(-50%);
-width:min(520px,100%);
-display:grid;
-grid-template-columns:repeat(4,1fr);
-padding:9px;
-background:#fffffff2;
-border-top:1px solid #e9eaf2
-}
-
+.option.correct{background:#d9f7e8;color:#087443}
+.option.wrong{background:#ffe0e0;color:#a31313}
 .nav{
-border:0;
-background:none;
-color:#888;
-font-size:11px
+ position:fixed;
+ bottom:0;
+ left:0;
+ right:0;
+ background:white;
+ border-top:1px solid #ddd;
+ display:flex;
+ justify-content:center;
+ gap:5px;
+ padding:8px;
+ z-index:10;
 }
-
-.nav div{
-font-size:19px
+.nav button{
+ background:white;
+ color:#596273;
+ padding:9px 7px;
+ font-size:12px;
 }
-
-.nav.active{
-color:#5b5cf0;
-font-weight:800
+.nav button.active{color:#315bea}
+.page{display:none}
+.page.active{display:block}
+.badge{
+ display:inline-block;
+ padding:5px 9px;
+ border-radius:20px;
+ background:#edf1ff;
+ color:#315bea;
+ font-size:12px;
+ margin:3px;
 }
-
-hr{
-border:0;
-border-top:1px solid #eee;
-margin:12px 0
+.lock{
+ text-align:center;
+ font-size:28px;
+}
+.small{font-size:13px;color:#697386}
+.score{
+ font-size:38px;
+ font-weight:bold;
+ text-align:center;
+ color:#315bea;
 }
 </style>
 </head>
@@ -190,274 +125,179 @@ margin:12px 0
 
 <div class="app">
 
-<section id="home" class="screen active">
+<header>
+<h1>📚 Student Pro</h1>
+<p id="welcome">Economics • Accounting • ACCA</p>
+</header>
 
-<div class="hero">
-<div class="brand">Student Pro</div>
-<div class="sub">Economics • Accounting • ACCA</div>
-<div class="welcome" id="welcome">
-سلام 👋 آماده‌ای امروز بهتر یاد بگیری؟
-</div>
-</div>
+<!-- HOME -->
+<section id="home" class="page active">
 
-<div class="title">دسترسی سریع</div>
+<div class="card">
+<h2>👋 Welcome</h2>
+<p>Your smart Economics & Accounting study assistant.</p>
 
 <div class="grid">
-
-<div class="card" onclick="show('calc')">
-<div class="icon">🧮</div>
-<h3>محاسبه‌گرها</h3>
-<p>درصد، نمره، سود و زیان، هزینه واحد</p>
+<button onclick="showPage('calculators')">🧮 Calculators</button>
+<button onclick="showPage('quiz')">🧠 Daily Quiz</button>
+<button onclick="showPage('terms')">📚 Terms</button>
+<button onclick="showPage('premium')">⭐ Premium</button>
 </div>
-
-<div class="card" onclick="show('quiz')">
-<div class="icon">🧠</div>
-<h3>Daily Quiz</h3>
-<p>سوال‌های کوتاه اقتصادی و حسابداری</p>
 </div>
-
-<div class="card" onclick="show('terms')">
-<div class="icon">📚</div>
-<h3>اصطلاحات</h3>
-<p>English → دری</p>
-</div>
-
-<div class="card" onclick="show('premium')">
-<div class="icon">⭐</div>
-<h3>Premium</h3>
-<p>ابزارهای پیشرفته</p>
-</div>
-
-<div class="card premium wide" onclick="show('premium')">
-<h3>✨ Upgrade to Premium</h3>
-<p>
-Excel Templates، Costing، Question Bank و دوره‌های بیشتر.
-</p>
-<button class="btn">مشاهده امکانات</button>
-</div>
-
-</div>
-
-<div class="title">امروز</div>
 
 <div class="card">
-🎯 هدف امروز: ۵ سوال + ۱۰ دقیقه مرور اصطلاحات
+<h2>📊 Student Tools</h2>
+<p class="small">
+Calculate, learn, practice and improve your Economics,
+Accounting and ACCA skills.
+</p>
 </div>
 
 </section>
 
 
-<section id="calc" class="screen">
-
-<button class="back" onclick="show('home')">→ بازگشت</button>
-
-<div class="title">🧮 محاسبه‌گرها</div>
+<!-- CALCULATORS -->
+<section id="calculators" class="page">
 
 <div class="card">
+<h2>🧮 Calculators</h2>
 
-<h3>درصد</h3>
+<h3>Percentage</h3>
+<input id="p1" type="number" placeholder="Number">
+<input id="p2" type="number" placeholder="Total">
+<button onclick="percentage()">Calculate</button>
+<div id="pr" class="result"></div>
 
-<input id="a" class="input" type="number" placeholder="عدد">
+<hr>
 
-<input id="b" class="input" type="number" placeholder="از کل">
+<h3>Grade Percentage</h3>
+<input id="g1" type="number" placeholder="Marks obtained">
+<input id="g2" type="number" placeholder="Total marks">
+<button onclick="grade()">Calculate Grade %</button>
+<div id="gr" class="result"></div>
 
-<button class="btn" onclick="percent()">محاسبه</button>
+<hr>
 
-<div id="pr" class="result">—</div>
+<h3>Profit & Loss</h3>
+<input id="buy" type="number" placeholder="Cost price">
+<input id="sell" type="number" placeholder="Selling price">
+<button onclick="profit()">Calculate</button>
+<div id="lr" class="result"></div>
 
-</div>
-
-
-<div class="card" style="margin-top:12px">
-
-<h3>نمره به درصد</h3>
-
-<input id="g1" class="input" type="number" placeholder="نمره گرفته">
-
-<input id="g2" class="input" type="number" placeholder="نمره کل">
-
-<button class="btn" onclick="grade()">محاسبه</button>
-
-<div id="gr" class="result">—</div>
-
-</div>
-
-
-<div class="card" style="margin-top:12px">
-
-<h3>سود و زیان</h3>
-
-<input id="r" class="input" type="number" placeholder="Revenue / درآمد">
-
-<input id="c" class="input" type="number" placeholder="Cost / هزینه">
-
-<button class="btn" onclick="profit()">محاسبه</button>
-
-<div id="rr" class="result">—</div>
-
-</div>
-
-
-<div class="card" style="margin-top:12px">
+<hr>
 
 <h3>Cost per Unit</h3>
+<input id="cost" type="number" placeholder="Total cost">
+<input id="units" type="number" placeholder="Units">
+<button onclick="unitCost()">Calculate</button>
+<div id="cr" class="result"></div>
 
-<input id="tc" class="input" type="number" placeholder="Total Cost">
+</div>
+</section>
 
-<input id="u" class="input" type="number" placeholder="Units">
 
-<button class="btn" onclick="unit()">محاسبه</button>
+<!-- QUIZ -->
+<section id="quiz" class="page">
 
-<div id="ur" class="result">—</div>
+<div class="card" id="quizBox">
+<h2>🧠 Daily Quiz</h2>
+<p class="small">Answer the questions and test your knowledge.</p>
 
+<button onclick="startQuiz()">Start Quiz</button>
 </div>
 
 </section>
 
 
-<section id="quiz" class="screen">
-
-<button class="back" onclick="show('home')">→ بازگشت</button>
-
-<div class="title">🧠 Daily Quiz</div>
+<!-- TERMS -->
+<section id="terms" class="page">
 
 <div class="card">
+<h2>📚 Economics & Accounting Terms</h2>
 
-<h3>Revenue به چه معناست؟</h3>
-
-<button class="option" onclick="ans(this,false)">
-هزینه
-</button>
-
-<button class="option" onclick="ans(this,true)">
-درآمد / عواید
-</button>
-
-<button class="option" onclick="ans(this,false)">
-دارایی
-</button>
-
-<button class="option" onclick="ans(this,false)">
-بدهی
-</button>
-
-<p id="qa"></p>
-
-</div>
-
-</section>
-
-
-<section id="terms" class="screen">
-
-<button class="back" onclick="show('home')">
-→ بازگشت
-</button>
-
-<div class="title">
-📚 اصطلاحات
+<div class="card">
+<b>Revenue</b>
+<p class="small">Income earned from selling goods or services.</p>
 </div>
 
 <div class="card">
+<b>Cost</b>
+<p class="small">The resources or money used to produce goods or services.</p>
+</div>
 
-<b>Revenue</b> — درآمد / عواید
+<div class="card">
+<b>Profit</b>
+<p class="small">Revenue minus total costs.</p>
+</div>
 
-<hr>
+<div class="card">
+<b>Contribution Margin</b>
+<p class="small">Sales revenue minus variable costs.</p>
+</div>
 
-<b>Cost</b> — هزینه / مصارف
+<div class="card">
+<b>Gross Margin</b>
+<p class="small">Gross profit expressed as a percentage of revenue.</p>
+</div>
 
-<hr>
+<div class="card">
+<b>Balance Sheet</b>
+<p class="small">Statement showing assets, liabilities and equity.</p>
+</div>
 
-<b>Profit</b> — سود
+<div class="card">
+<b>Income Statement</b>
+<p class="small">Statement showing revenue, expenses and profit or loss.</p>
+</div>
 
-<hr>
+</div>
+</section>
 
-<b>Contribution Margin</b> — حاشیه مشارکت
 
-<hr>
+<!-- PREMIUM -->
+<section id="premium" class="page">
 
-<b>Gross Margin</b> — حاشیه سود ناخالص
+<div class="card">
+<h2>⭐ Student Pro Premium</h2>
+<p>Unlock advanced study tools.</p>
+</div>
 
-<hr>
+<div class="card">
+<div class="lock">🔒</div>
+<h3>Advanced Costing Calculator</h3>
+<p class="small">Calculate production costs, materials, labour and overhead.</p>
+<button onclick="premiumMessage()">Premium</button>
+</div>
 
-<b>Balance Sheet</b> — ترازنامه
+<div class="card">
+<div class="lock">📊</div>
+<h3>Excel Templates</h3>
+<p class="small">Income Statement • Balance Sheet • Cost Sheet • Cash Book</p>
+<button onclick="premiumMessage()">Premium</button>
+</div>
 
-<hr>
-
-<b>Income Statement</b> — صورت سود و زیان
-
+<div class="card">
+<div class="lock">🎓</div>
+<h3>Premium Question Bank</h3>
+<p class="small">More Economics, Accounting and ACCA questions.</p>
+<button onclick="premiumMessage()">Premium</button>
 </div>
 
 </section>
 
 
-<section id="premium" class="screen">
+<!-- PROFILE -->
+<section id="profile" class="page">
 
-<button class="back" onclick="show('home')">
-→ بازگشت
-</button>
-
-<div class="title">
-⭐ Student Pro Premium
+<div class="card">
+<h2>👤 My Profile</h2>
+<p id="username">Student</p>
+<p class="small">Student Pro learner</p>
 </div>
 
-<div class="card premium">
-
-<h3>COMING SOON</h3>
-
-<p>
-پرداخت Telegram Stars و اشتراک را در مرحله بعد وصل می‌کنیم.
-</p>
-
-</div>
-
-<div class="card" style="margin-top:12px">
-
-🔒 Advanced Costing
-
-<br>
-
-<small>
-COGM, COGS, WIP, Finished Goods
-</small>
-
-</div>
-
-<div class="card" style="margin-top:12px">
-
-🔒 Excel Templates
-
-<br>
-
-<small>
-Income Statement، Balance Sheet، Inventory و Payroll
-</small>
-
-</div>
-
-</section>
-
-
-<section id="profile" class="screen">
-
-<div class="title">
-👤 پروفایل
-</div>
-
-<div class="card" style="text-align:center">
-
-<h2 id="pn">
-Student
-</h2>
-
-<p>
-Free Member
-</p>
-
-<button class="btn" onclick="show('premium')">
-⭐ Upgrade to Premium
-</button>
-
+<div class="card">
+<h3>📈 Quiz Statistics</h3>
+<p id="stats">No quiz completed yet.</p>
 </div>
 
 </section>
@@ -465,26 +305,29 @@ Free Member
 </div>
 
 
-<div class="bottom">
+<!-- NAVIGATION -->
+<div class="nav">
 
-<button class="nav active" onclick="show('home',this)">
-<div>⌂</div>
-خانه
+<button onclick="showPage('home')" id="navhome">🏠<br>Home</button>
+
+<button onclick="showPage('calculators')" id="navcalculators">
+🧮<br>Calc
 </button>
 
-<button class="nav" onclick="show('calc',this)">
-<div>🧮</div>
-محاسبه
+<button onclick="showPage('quiz')" id="navquiz">
+🧠<br>Quiz
 </button>
 
-<button class="nav" onclick="show('quiz',this)">
-<div>🧠</div>
-Quiz
+<button onclick="showPage('terms')" id="navterms">
+📚<br>Terms
 </button>
 
-<button class="nav" onclick="show('profile',this)">
-<div>👤</div>
-پروفایل
+<button onclick="showPage('premium')" id="navpremium">
+⭐<br>Premium
+</button>
+
+<button onclick="showPage('profile')" id="navprofile">
+👤<br>Profile
 </button>
 
 </div>
@@ -492,124 +335,345 @@ Quiz
 
 <script>
 
-const tg=window.Telegram?.WebApp;
+const tg = window.Telegram?.WebApp;
 
 if(tg){
+ tg.ready();
+ tg.expand();
 
-tg.ready();
+ const user=tg.initDataUnsafe?.user;
 
-tg.expand();
+ if(user){
+   document.getElementById("welcome").textContent=
+   "Welcome, "+(user.first_name||"Student")+" 👋";
 
-const u=tg.initDataUnsafe?.user;
-
-if(u){
-
-document.getElementById('welcome').textContent=
-'سلام '+(u.first_name||'Student')+
-' 👋 آماده‌ای امروز بهتر یاد بگیری؟';
-
-document.getElementById('pn').textContent=
-u.first_name||'Student';
-
-}
-
+   document.getElementById("username").textContent=
+   (user.first_name||"Student")+" "+(user.last_name||"");
+ }
 }
 
 
-function show(id,btn){
+/* NAVIGATION */
 
-document.querySelectorAll('.screen')
-.forEach(x=>x.classList.remove('active'));
+function showPage(page){
 
-document.getElementById(id)
-.classList.add('active');
+ document.querySelectorAll(".page")
+ .forEach(x=>x.classList.remove("active"));
 
-document.querySelectorAll('.nav')
-.forEach(x=>x.classList.remove('active'));
+ document.getElementById(page).classList.add("active");
 
-if(btn)btn.classList.add('active');
+ document.querySelectorAll(".nav button")
+ .forEach(x=>x.classList.remove("active"));
 
-window.scrollTo(0,0);
+ const nav=document.getElementById("nav"+page);
 
+ if(nav) nav.classList.add("active");
+
+ window.scrollTo(0,0);
 }
 
 
-function n(id){
+/* CALCULATORS */
 
-return parseFloat(
-document.getElementById(id).value
-)||0;
+function percentage(){
 
-}
+ let a=Number(document.getElementById("p1").value);
+ let b=Number(document.getElementById("p2").value);
 
+ if(!b){
+   document.getElementById("pr").textContent="Please enter valid numbers.";
+   return;
+ }
 
-function percent(){
-
-document.getElementById('pr').textContent=
-
-n('b')
-?
-((n('a')/n('b'))*100).toFixed(2)+'%'
-:
-'اعداد را وارد کنید';
-
+ document.getElementById("pr").textContent=
+ ((a/b)*100).toFixed(2)+"%";
 }
 
 
 function grade(){
 
-document.getElementById('gr').textContent=
+ let a=Number(document.getElementById("g1").value);
+ let b=Number(document.getElementById("g2").value);
 
-n('g2')
-?
-((n('g1')/n('g2'))*100).toFixed(2)+'%'
-:
-'اعداد را وارد کنید';
+ if(!b){
+   document.getElementById("gr").textContent="Please enter valid marks.";
+   return;
+ }
 
+ document.getElementById("gr").textContent=
+ ((a/b)*100).toFixed(2)+"%";
 }
 
 
 function profit(){
 
-document.getElementById('rr').textContent=
+ let buy=Number(document.getElementById("buy").value);
+ let sell=Number(document.getElementById("sell").value);
 
-'Profit = '+
-(n('r')-n('c')).toLocaleString()+
-' AFN';
+ if(!buy){
+   document.getElementById("lr").textContent="Please enter valid prices.";
+   return;
+ }
 
+ let result=sell-buy;
+ let percent=(result/buy)*100;
+
+ if(result>0){
+   document.getElementById("lr").textContent=
+   "Profit: "+result.toFixed(2)+" | "+percent.toFixed(2)+"%";
+ }else if(result<0){
+   document.getElementById("lr").textContent=
+   "Loss: "+Math.abs(result).toFixed(2)+" | "+Math.abs(percent).toFixed(2)+"%";
+ }else{
+   document.getElementById("lr").textContent="No Profit, No Loss";
+ }
 }
 
 
-function unit(){
+function unitCost(){
 
-document.getElementById('ur').textContent=
+ let cost=Number(document.getElementById("cost").value);
+ let units=Number(document.getElementById("units").value);
 
-n('u')
-?
-'Cost per Unit = '+
-(n('tc')/n('u')).toFixed(2)
-:
-'اعداد را وارد کنید';
+ if(!units){
+   document.getElementById("cr").textContent="Please enter valid units.";
+   return;
+ }
 
+ document.getElementById("cr").textContent=
+ "Cost per Unit: "+(cost/units).toFixed(2);
 }
 
 
-function ans(b,ok){
+/* QUIZ */
 
-b.style.background=
-ok?'#eafff8':'#fff0f0';
+let questions=[];
+let currentQuestion=0;
+let score=0;
+let answered=false;
 
-document.getElementById('qa').textContent=
 
-ok
-?
-'✅ درست! Revenue یعنی درآمد / عواید.'
-:
-'❌ اشتباه. Revenue یعنی درآمد / عواید.';
+/* Load questions.json */
+
+async function loadQuestions(){
+
+ try{
+
+   const response=await fetch("./questions.json");
+
+   if(!response.ok) throw new Error("Questions file not found");
+
+   questions=await response.json();
+
+ }catch(error){
+
+   console.log(error);
+
+   document.getElementById("quizBox").innerHTML=`
+   <h2>🧠 Daily Quiz</h2>
+   <div class="result">
+   ⚠️ Questions could not be loaded.
+   <br><br>
+   Please make sure <b>questions.json</b> is saved in the same folder as index.html.
+   </div>
+   `;
+ }
+}
+
+
+loadQuestions();
+
+
+function startQuiz(){
+
+ if(!questions.length){
+
+   document.getElementById("quizBox").innerHTML=`
+   <h2>🧠 Daily Quiz</h2>
+   <div class="result">
+   Questions are loading. Please try again.
+   </div>
+   `;
+
+   loadQuestions();
+   return;
+ }
+
+ currentQuestion=0;
+ score=0;
+ answered=false;
+
+ showQuestion();
+}
+
+
+function showQuestion(){
+
+ const q=questions[currentQuestion];
+
+ answered=false;
+
+ let html=`
+
+ <h2>🧠 Daily Quiz</h2>
+
+ <span class="badge">${q.category}</span>
+ <span class="badge">${q.difficulty}</span>
+
+ <p class="small">
+ Question ${currentQuestion+1} of ${questions.length}
+ </p>
+
+ <h3>${q.question}</h3>
+ `;
+
+ q.options.forEach((option,index)=>{
+
+   html+=`
+   <button
+   class="option"
+   onclick="answerQuestion(${index})"
+   id="option${index}">
+   ${String.fromCharCode(65+index)}. ${option}
+   </button>
+   `;
+ });
+
+ html+=`<div id="explanation"></div>`;
+
+ document.getElementById("quizBox").innerHTML=html;
+}
+
+
+function answerQuestion(selected){
+
+ if(answered) return;
+
+ answered=true;
+
+ const q=questions[currentQuestion];
+
+ const buttons=document.querySelectorAll(".option");
+
+ buttons.forEach((button,index)=>{
+
+   if(index===q.answer){
+     button.classList.add("correct");
+   }
+
+   if(index===selected && index!==q.answer){
+     button.classList.add("wrong");
+   }
+
+ });
+
+ if(selected===q.answer){
+   score++;
+ }
+
+ document.getElementById("explanation").innerHTML=`
+
+ <div class="result">
+
+ <b>${selected===q.answer ? "✅ Correct!" : "❌ Incorrect"}</b>
+
+ <p>${q.explanation}</p>
+
+ <button onclick="nextQuestion()">
+ ${currentQuestion+1===questions.length ? "Finish Quiz" : "Next Question →"}
+ </button>
+
+ </div>
+
+ `;
+}
+
+
+function nextQuestion(){
+
+ currentQuestion++;
+
+ if(currentQuestion>=questions.length){
+
+   finishQuiz();
+
+ }else{
+
+   showQuestion();
+
+ }
+}
+
+
+function finishQuiz(){
+
+ const percent=(score/questions.length)*100;
+
+ localStorage.setItem("lastQuizScore",score);
+ localStorage.setItem("lastQuizTotal",questions.length);
+
+ document.getElementById("quizBox").innerHTML=`
+
+ <h2>🎉 Quiz Complete!</h2>
+
+ <div class="score">
+ ${score}/${questions.length}
+ </div>
+
+ <p style="text-align:center">
+ ${percent.toFixed(0)}%
+ </p>
+
+ <div class="result">
+
+ ${
+ percent>=80
+ ? "🌟 Excellent work!"
+ : percent>=60
+ ? "👍 Good job! Keep studying."
+ : "📚 Keep practicing. You can improve!"
+ }
+
+ </div>
+
+ <br>
+
+ <button onclick="startQuiz()">Try Again</button>
+
+ `;
+
+ updateStats();
+}
+
+
+function updateStats(){
+
+ const score=localStorage.getItem("lastQuizScore");
+ const total=localStorage.getItem("lastQuizTotal");
+
+ if(score!==null){
+
+   document.getElementById("stats").textContent=
+   "Last Quiz: "+score+" / "+total;
+ }
+}
+
+
+updateStats();
+
+
+/* PREMIUM */
+
+function premiumMessage(){
+
+ alert(
+ "⭐ Premium features are coming soon.\n\n" +
+ "Telegram Stars payment will be added in a later stage."
+ );
 
 }
 
 </script>
 
 </body>
-                                               </html>
+</html>
