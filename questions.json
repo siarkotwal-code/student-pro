@@ -1,0 +1,426 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "category": "Economics",
+      "difficulty": "Easy",
+      "question": "What is economics mainly concerned with?",
+      "options": [
+        "How to print money",
+        "How scarce resources are allocated",
+        "How to eliminate all costs",
+        "How to increase population"
+      ],
+      "answer": 1,
+      "explanation": "Economics studies how people and societies use scarce resources to satisfy unlimited wants."
+    },
+    {
+      "id": 2,
+      "category": "Economics",
+      "difficulty": "Easy",
+      "question": "What is opportunity cost?",
+      "options": [
+        "The total money spent",
+        "The next best alternative that is given up",
+        "The selling price of a product",
+        "The amount of profit earned"
+      ],
+      "answer": 1,
+      "explanation": "Opportunity cost is the value of the next best alternative sacrificed when a choice is made."
+    },
+    {
+      "id": 3,
+      "category": "Economics",
+      "difficulty": "Easy",
+      "question": "What happens to quantity demanded when price normally increases?",
+      "options": [
+        "It increases",
+        "It decreases",
+        "It always remains the same",
+        "It becomes zero"
+      ],
+      "answer": 1,
+      "explanation": "According to the law of demand, quantity demanded normally falls when price rises, other things being equal."
+    },
+    {
+      "id": 4,
+      "category": "Economics",
+      "difficulty": "Medium",
+      "question": "What does GDP measure?",
+      "options": [
+        "The total population of a country",
+        "The value of final goods and services produced within a country",
+        "The total money owned by citizens",
+        "The total exports only"
+      ],
+      "answer": 1,
+      "explanation": "GDP measures the market value of final goods and services produced within a country's borders during a period."
+    },
+    {
+      "id": 5,
+      "category": "Economics",
+      "difficulty": "Easy",
+      "question": "Which of the following is a factor of production?",
+      "options": [
+        "Land",
+        "Inflation",
+        "Tax",
+        "Profit margin"
+      ],
+      "answer": 0,
+      "explanation": "The main factors of production are land, labour, capital and entrepreneurship."
+    },
+    {
+      "id": 6,
+      "category": "Economics",
+      "difficulty": "Medium",
+      "question": "What is inflation?",
+      "options": [
+        "A general decrease in prices",
+        "A sustained increase in the general price level",
+        "An increase in production only",
+        "A decrease in population"
+      ],
+      "answer": 1,
+      "explanation": "Inflation is a sustained increase in the general level of prices of goods and services."
+    },
+    {
+      "id": 7,
+      "category": "Economics",
+      "difficulty": "Medium",
+      "question": "What is a market equilibrium?",
+      "options": [
+        "When supply is zero",
+        "When demand is zero",
+        "When quantity demanded equals quantity supplied",
+        "When prices are always rising"
+      ],
+      "answer": 2,
+      "explanation": "Market equilibrium occurs where quantity demanded equals quantity supplied."
+    },
+    {
+      "id": 8,
+      "category": "Economics",
+      "difficulty": "Medium",
+      "question": "What does fiscal policy mainly involve?",
+      "options": [
+        "Government spending and taxation",
+        "Only bank lending",
+        "Only exchange rates",
+        "Only private investment"
+      ],
+      "answer": 0,
+      "explanation": "Fiscal policy uses government spending and taxation to influence economic activity."
+    },
+    {
+      "id": 9,
+      "category": "Economics",
+      "difficulty": "Medium",
+      "question": "What is price elasticity of demand?",
+      "options": [
+        "The change in supply caused by income",
+        "The responsiveness of quantity demanded to a change in price",
+        "The total cost of production",
+        "The change in population"
+      ],
+      "answer": 1,
+      "explanation": "Price elasticity of demand measures how responsive quantity demanded is to a change in price."
+    },
+    {
+      "id": 10,
+      "category": "Economics",
+      "difficulty": "Hard",
+      "question": "If demand is price elastic, a decrease in price will normally:",
+      "options": [
+        "Decrease total revenue",
+        "Increase total revenue",
+        "Have no effect on revenue",
+        "Make revenue zero"
+      ],
+      "answer": 1,
+      "explanation": "When demand is elastic, the percentage increase in quantity demanded is greater than the percentage decrease in price, so total revenue increases."
+    },
+
+    {
+      "id": 11,
+      "category": "Accounting",
+      "difficulty": "Easy",
+      "question": "What is an asset?",
+      "options": [
+        "A resource controlled by a business",
+        "A business expense only",
+        "Money owed to suppliers",
+        "Owner's withdrawal"
+      ],
+      "answer": 0,
+      "explanation": "An asset is a resource controlled by an entity as a result of past events from which future economic benefits are expected."
+    },
+    {
+      "id": 12,
+      "category": "Accounting",
+      "difficulty": "Easy",
+      "question": "Which equation is the basic accounting equation?",
+      "options": [
+        "Assets = Revenue + Expenses",
+        "Assets = Liabilities + Equity",
+        "Profit = Assets + Capital",
+        "Revenue = Assets + Liabilities"
+      ],
+      "answer": 1,
+      "explanation": "The fundamental accounting equation is Assets = Liabilities + Equity."
+    },
+    {
+      "id": 13,
+      "category": "Accounting",
+      "difficulty": "Easy",
+      "question": "Which account normally has a debit balance?",
+      "options": [
+        "Revenue",
+        "Capital",
+        "Asset",
+        "Liability"
+      ],
+      "answer": 2,
+      "explanation": "Assets normally have debit balances. Expenses also normally have debit balances."
+    },
+    {
+      "id": 14,
+      "category": "Accounting",
+      "difficulty": "Easy",
+      "question": "What is revenue?",
+      "options": [
+        "Money borrowed from a bank",
+        "Income earned from normal business activities",
+        "Owner's investment only",
+        "A business liability"
+      ],
+      "answer": 1,
+      "explanation": "Revenue is income earned from selling goods or providing services as part of normal business activities."
+    },
+    {
+      "id": 15,
+      "category": "Accounting",
+      "difficulty": "Medium",
+      "question": "What is gross profit?",
+      "options": [
+        "Revenue minus cost of sales",
+        "Revenue minus all expenses",
+        "Assets minus liabilities",
+        "Cash minus capital"
+      ],
+      "answer": 0,
+      "explanation": "Gross profit = Revenue − Cost of Sales."
+    },
+    {
+      "id": 16,
+      "category": "Accounting",
+      "difficulty": "Medium",
+      "question": "Which financial statement shows assets, liabilities and equity?",
+      "options": [
+        "Income statement",
+        "Cash flow statement",
+        "Statement of financial position",
+        "Sales invoice"
+      ],
+      "answer": 2,
+      "explanation": "The statement of financial position, commonly called the balance sheet, shows assets, liabilities and equity at a particular date."
+    },
+    {
+      "id": 17,
+      "category": "Accounting",
+      "difficulty": "Medium",
+      "question": "What is depreciation?",
+      "options": [
+        "An increase in cash",
+        "The systematic allocation of the depreciable amount of an asset over its useful life",
+        "A type of revenue",
+        "A bank deposit"
+      ],
+      "answer": 1,
+      "explanation": "Depreciation allocates the depreciable amount of a non-current asset over its useful life."
+    },
+    {
+      "id": 18,
+      "category": "Accounting",
+      "difficulty": "Medium",
+      "question": "What is the purpose of a trial balance?",
+      "options": [
+        "To calculate only sales",
+        "To check the arithmetic equality of debit and credit balances",
+        "To replace the income statement",
+        "To record only cash transactions"
+      ],
+      "answer": 1,
+      "explanation": "A trial balance lists ledger balances and checks whether total debits equal total credits."
+    },
+    {
+      "id": 19,
+      "category": "Accounting",
+      "difficulty": "Hard",
+      "question": "A business buys equipment for cash. What is the effect?",
+      "options": [
+        "Assets increase overall",
+        "One asset increases and another asset decreases",
+        "Liabilities increase",
+        "Equity immediately increases"
+      ],
+      "answer": 1,
+      "explanation": "Equipment increases while cash decreases. Both are assets, so total assets remain unchanged."
+    },
+    {
+      "id": 20,
+      "category": "Accounting",
+      "difficulty": "Hard",
+      "question": "Which formula calculates contribution margin?",
+      "options": [
+        "Sales − Variable costs",
+        "Sales − Fixed assets",
+        "Assets − Liabilities",
+        "Revenue − Capital"
+      ],
+      "answer": 0,
+      "explanation": "Contribution margin = Sales revenue − Variable costs."
+    },
+
+    {
+      "id": 21,
+      "category": "ACCA",
+      "difficulty": "Easy",
+      "question": "What does ACCA stand for?",
+      "options": [
+        "Association of Certified Commercial Accountants",
+        "Association of Chartered Certified Accountants",
+        "Accounting Council of Chartered Auditors",
+        "Association of Corporate Cost Accountants"
+      ],
+      "answer": 1,
+      "explanation": "ACCA stands for Association of Chartered Certified Accountants."
+    },
+    {
+      "id": 22,
+      "category": "ACCA",
+      "difficulty": "Easy",
+      "question": "What is a stakeholder?",
+      "options": [
+        "Only the business owner",
+        "A person or group that can affect or be affected by an organisation",
+        "Only a customer",
+        "Only an employee"
+      ],
+      "answer": 1,
+      "explanation": "Stakeholders are individuals or groups with an interest in or influence over an organisation."
+    },
+    {
+      "id": 23,
+      "category": "ACCA",
+      "difficulty": "Easy",
+      "question": "Which is an example of an internal stakeholder?",
+      "options": [
+        "Government",
+        "Supplier",
+        "Employee",
+        "Customer"
+      ],
+      "answer": 2,
+      "explanation": "Employees are internal stakeholders because they are part of the organisation."
+    },
+    {
+      "id": 24,
+      "category": "ACCA",
+      "difficulty": "Medium",
+      "question": "What is corporate governance?",
+      "options": [
+        "The process of selling products",
+        "The system by which organisations are directed and controlled",
+        "A method of calculating wages",
+        "A type of bank account"
+      ],
+      "answer": 1,
+      "explanation": "Corporate governance concerns the systems and processes by which organisations are directed and controlled."
+    },
+    {
+      "id": 25,
+      "category": "ACCA",
+      "difficulty": "Medium",
+      "question": "What is the purpose of internal control?",
+      "options": [
+        "To eliminate every business risk",
+        "To help achieve objectives and safeguard assets",
+        "To increase taxes",
+        "To guarantee profit"
+      ],
+      "answer": 1,
+      "explanation": "Internal controls help organisations achieve objectives, safeguard assets, maintain reliable information and manage risks."
+    },
+    {
+      "id": 26,
+      "category": "ACCA",
+      "difficulty": "Medium",
+      "question": "Which of the following is an example of an ethical principle?",
+      "options": [
+        "Dishonesty",
+        "Integrity",
+        "Fraud",
+        "Manipulation"
+      ],
+      "answer": 1,
+      "explanation": "Integrity means being straightforward and honest in professional and business relationships."
+    },
+    {
+      "id": 27,
+      "category": "ACCA",
+      "difficulty": "Medium",
+      "question": "What is the main purpose of a business budget?",
+      "options": [
+        "To plan and control financial resources",
+        "To eliminate accounting",
+        "To guarantee sales",
+        "To replace financial statements"
+      ],
+      "answer": 0,
+      "explanation": "Budgets help organisations plan expected income and expenditure and control financial resources."
+    },
+    {
+      "id": 28,
+      "category": "ACCA",
+      "difficulty": "Hard",
+      "question": "What is segregation of duties?",
+      "options": [
+        "Giving all financial responsibilities to one person",
+        "Separating key responsibilities among different people",
+        "Removing all internal controls",
+        "Increasing employee salaries"
+      ],
+      "answer": 1,
+      "explanation": "Segregation of duties separates responsibilities so that one person does not control all stages of a transaction."
+    },
+    {
+      "id": 29,
+      "category": "ACCA",
+      "difficulty": "Hard",
+      "question": "Which threat occurs when a professional's personal interest may improperly influence judgement?",
+      "options": [
+        "Self-interest threat",
+        "Advertising threat",
+        "Production threat",
+        "Market threat"
+      ],
+      "answer": 0,
+      "explanation": "A self-interest threat occurs when a financial or other personal interest may influence professional judgement or behaviour."
+    },
+    {
+      "id": 30,
+      "category": "ACCA",
+      "difficulty": "Hard",
+      "question": "Why is professional competence important for an accountant?",
+      "options": [
+        "It allows the accountant to ignore standards",
+        "It helps the accountant maintain the knowledge and skill needed to provide competent professional service",
+        "It guarantees business profit",
+        "It removes the need for ethical behaviour"
+      ],
+      "answer": 1,
+      "explanation": "Professional competence requires maintaining appropriate knowledge and skill so professional services are provided competently."
+    }
+  ]
+        }
