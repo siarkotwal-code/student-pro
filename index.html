@@ -450,7 +450,107 @@ function showPage(page){
   window.scrollTo(0,0);
 
 }
+/* SCIENTIFIC CALCULATOR */
 
+function sciInput(value){
+
+  const display=document.getElementById("sciDisplay");
+
+  display.value += value;
+
+}
+
+function sciClear(){
+
+  document.getElementById("sciDisplay").value="";
+
+}
+
+function sciDelete(){
+
+  const display=document.getElementById("sciDisplay");
+
+  display.value=display.value.slice(0,-1);
+
+}
+
+function sciCalculate(){
+
+  const display=document.getElementById("sciDisplay");
+
+  try{
+
+    let expression=display.value;
+
+    expression=expression.replace(/Math\.PI/g,Math.PI);
+
+    display.value=eval(expression);
+
+  }catch(error){
+
+    display.value="Error";
+
+  }
+
+}
+
+function sciFunction(type){
+
+  const display=document.getElementById("sciDisplay");
+
+  const number=parseFloat(display.value);
+
+  if(isNaN(number)){
+
+    display.value="Error";
+
+    return;
+
+  }
+
+  if(type==="sqrt"){
+
+    display.value=Math.sqrt(number);
+
+  }
+
+  else if(type==="square"){
+
+    display.value=number*number;
+
+  }
+
+  else if(type==="sin"){
+
+    display.value=Math.sin(number*Math.PI/180);
+
+  }
+
+  else if(type==="cos"){
+
+    display.value=Math.cos(number*Math.PI/180);
+
+  }
+
+  else if(type==="tan"){
+
+    display.value=Math.tan(number*Math.PI/180);
+
+  }
+
+  else if(type==="log"){
+
+    display.value=Math.log10(number);
+
+  }
+
+  else if(type==="ln"){
+
+    display.value=Math.log(number);
+
+  }
+
+}
 
 /* PERCENTAGE */
 
