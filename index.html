@@ -483,7 +483,8 @@ async function loadQuestions(){
 
 loadQuestions();
 
-
+const data=await response.json();
+questions=data.questions || data;
 function startQuiz(){
 
  if(!questions.length){
