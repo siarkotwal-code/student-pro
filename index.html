@@ -545,47 +545,46 @@ function calculateUnitCost(){
 
 
 /* QUIZ */
+let quizQuestions = [];
 
-const quizQuestions=[
+async function loadQuizQuestions(){
 
-{
-question:"What is opportunity cost?",
-options:[
-"The total money spent",
-"The next best alternative given up",
-"The selling price",
-"The amount of profit"
-],
-answer:1,
-explanation:"Opportunity cost is the value of the next best alternative that is sacrificed."
-},
+  try{
 
-{
-question:"What does GDP measure?",
-options:[
-"Population",
-"Final goods and services produced within a country",
-"Exports only",
-"Government revenue"
-],
-answer:1,
-explanation:"GDP measures the value of final goods and services produced within a country's borders."
-},
+    const response = await fetch("./questions.json?v=2");
 
-{
-question:"What is inflation?",
-options:[
-"A general increase in prices",
-"A general decrease in prices",
-"An increase in population",
-"A decrease in production"
-],
-answer:0,
-explanation:"Inflation is a sustained increase in the general price level."
+    if(!response.ok){
+      throw new Error("Questions file not found");
+    }
+
+    const data = await response.json();
+
+    quizQuestions = data.questions || data;
+
+    console.log("Quiz questions loaded:", quizQuestions.length);
+
+  }catch(error){
+
+    console.error("Quiz loading error:", error);
+
+    quizQuestions = [
+      {
+        question:"What is opportunity cost?",
+        options:[
+          "The total money spent",
+          "The next best alternative given up",
+          "The selling price",
+          "The amount of profit"
+        ],
+        answer:1,
+        explanation:"Opportunity cost is the value of the next best alternative that is sacrificed."
+      }
+    ];
+
+  }
+
 }
-
-];
-
+  loadQuizQuestions();
 
 let currentQuestion=0;
 
