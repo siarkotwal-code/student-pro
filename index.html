@@ -497,6 +497,76 @@ function sciCalculate(){
 }
 
 function sciFunction(type){
+  function sciCombination(){
+
+  const display=document.getElementById("sciDisplay");
+
+  const parts=display.value.split(",");
+
+  if(parts.length!==2){
+    display.value="Use n,r";
+    return;
+  }
+
+  const n=parseInt(parts[0]);
+  const r=parseInt(parts[1]);
+
+  if(
+    isNaN(n) ||
+    isNaN(r) ||
+    n<0 ||
+    r<0 ||
+    r>n
+  ){
+    display.value="Error";
+    return;
+  }
+
+  let result=1;
+
+  for(let i=1;i<=r;i++){
+    result=result*(n-r+i)/i;
+  }
+
+  display.value=result;
+
+}
+
+
+function sciPermutation(){
+
+  const display=document.getElementById("sciDisplay");
+
+  const parts=display.value.split(",");
+
+  if(parts.length!==2){
+    display.value="Use n,r";
+    return;
+  }
+
+  const n=parseInt(parts[0]);
+  const r=parseInt(parts[1]);
+
+  if(
+    isNaN(n) ||
+    isNaN(r) ||
+    n<0 ||
+    r<0 ||
+    r>n
+  ){
+    display.value="Error";
+    return;
+  }
+
+  let result=1;
+
+  for(let i=0;i<r;i++){
+    result=result*(n-i);
+  }
+
+  display.value=result;
+
+}
 
   const display=document.getElementById("sciDisplay");
 
@@ -553,6 +623,22 @@ function sciFunction(type){
   }
 
 }
+  else if(type==="factorial"){
+
+  if(number < 0 || !Number.isInteger(number)){
+    display.value="Error";
+    return;
+  }
+
+  let result=1;
+
+  for(let i=1;i<=number;i++){
+    result=result*i;
+  }
+
+  display.value=result;
+
+  }
 
 /* PERCENTAGE */
 
