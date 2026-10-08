@@ -171,7 +171,49 @@ h2{
 
 <h2>🧮 Calculators</h2>
 
-<h3>Percentage</h3>
+<h3>🔬 Scientific Calculator</h3>
+
+<input id="sciDisplay" type="text" placeholder="0" readonly>
+
+<div class="grid">
+
+<button onclick="sciClear()">AC</button>
+<button onclick="sciDelete()">DEL</button>
+<button onclick="sciInput('(')">(</button>
+<button onclick="sciInput(')')">)</button>
+
+<button onclick="sciInput('7')">7</button>
+<button onclick="sciInput('8')">8</button>
+<button onclick="sciInput('9')">9</button>
+<button onclick="sciInput('/')">÷</button>
+
+<button onclick="sciInput('4')">4</button>
+<button onclick="sciInput('5')">5</button>
+<button onclick="sciInput('6')">6</button>
+<button onclick="sciInput('*')">×</button>
+
+<button onclick="sciInput('1')">1</button>
+<button onclick="sciInput('2')">2</button>
+<button onclick="sciInput('3')">3</button>
+<button onclick="sciInput('-')">−</button>
+
+<button onclick="sciInput('0')">0</button>
+<button onclick="sciInput('.')">.</button>
+<button onclick="sciInput('+')">+</button>
+<button onclick="sciCalculate()">=</button>
+
+<button onclick="sciFunction('sqrt')">√</button>
+<button onclick="sciFunction('square')">x²</button>
+<button onclick="sciFunction('sin')">sin</button>
+<button onclick="sciFunction('cos')">cos</button>
+
+<button onclick="sciFunction('tan')">tan</button>
+<button onclick="sciFunction('log')">log</button>
+<button onclick="sciFunction('ln')">ln</button>
+<button onclick="sciInput('Math.PI')">π</button>
+
+</div>
+  <h3>Percentage</h3>
 
 <input id="p1" type="number" placeholder="Number">
 
