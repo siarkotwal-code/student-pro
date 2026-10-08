@@ -1,122 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Pro</title>
 
-<script src="https://telegram.org/js/telegram-web-app.js?64"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <style>
 *{box-sizing:border-box}
+
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:linear-gradient(135deg,#eef4ff,#f8f5ff);
- color:#172033;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f3f6ff;
+  color:#182238;
 }
-.app{max-width:520px;margin:auto;padding:18px 16px 90px}
+
+.app{
+  max-width:520px;
+  margin:auto;
+  padding:16px 16px 90px;
+}
+
 header{
- background:linear-gradient(135deg,#315bea,#7549e8);
- color:white;
- padding:22px;
- border-radius:24px;
- box-shadow:0 10px 30px #315bea30;
+  background:linear-gradient(135deg,#315bea,#7549e8);
+  color:white;
+  padding:24px;
+  border-radius:24px;
+  margin-bottom:15px;
 }
-header h1{margin:0 0 6px;font-size:27px}
-header p{margin:0;opacity:.9}
+
+header h1{
+  margin:0 0 6px;
+}
+
 .card{
- background:white;
- margin-top:15px;
- padding:18px;
- border-radius:20px;
- box-shadow:0 5px 20px #17203312;
+  background:white;
+  padding:18px;
+  margin-bottom:14px;
+  border-radius:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
-h2{margin-top:0}
+
 .grid{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
+
 button{
- width:100%;
- border:0;
- border-radius:15px;
- padding:14px;
- font-size:15px;
- font-weight:bold;
- cursor:pointer;
- background:#315bea;
- color:white;
+  border:0;
+  border-radius:14px;
+  padding:14px;
+  background:#315bea;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  width:100%;
+  margin:5px 0;
 }
-button.secondary{background:#edf1ff;color:#315bea}
-button.green{background:#13a66b}
-button.orange{background:#f59b23}
-input,select{
- width:100%;
- padding:13px;
- margin:7px 0;
- border:1px solid #dbe1ee;
- border-radius:12px;
- font-size:16px;
+
+input{
+  width:100%;
+  padding:13px;
+  margin:6px 0;
+  border:1px solid #d7ddeb;
+  border-radius:12px;
+  font-size:16px;
 }
+
 .result{
- margin-top:12px;
- padding:13px;
- border-radius:12px;
- background:#f0f4ff;
- font-weight:bold;
+  margin-top:10px;
+  padding:12px;
+  background:#eef3ff;
+  border-radius:12px;
+  font-weight:bold;
 }
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
 .option{
- background:#f4f6fb;
- color:#172033;
- text-align:left;
- margin:7px 0;
+  background:#f1f4fa;
+  color:#182238;
+  text-align:left;
 }
-.option.correct{background:#d9f7e8;color:#087443}
-.option.wrong{background:#ffe0e0;color:#a31313}
+
+.correct{
+  background:#ccefdc !important;
+  color:#08743e !important;
+}
+
+.wrong{
+  background:#ffd9d9 !important;
+  color:#a00000 !important;
+}
+
 .nav{
- position:fixed;
- bottom:0;
- left:0;
- right:0;
- background:white;
- border-top:1px solid #ddd;
- display:flex;
- justify-content:center;
- gap:5px;
- padding:8px;
- z-index:10;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  border-top:1px solid #ddd;
+  display:flex;
+  justify-content:center;
+  padding:7px;
+  z-index:100;
 }
+
 .nav button{
- background:white;
- color:#596273;
- padding:9px 7px;
- font-size:12px;
+  background:white;
+  color:#555;
+  font-size:11px;
+  padding:8px 5px;
+  margin:0 2px;
 }
-.nav button.active{color:#315bea}
-.page{display:none}
-.page.active{display:block}
-.badge{
- display:inline-block;
- padding:5px 9px;
- border-radius:20px;
- background:#edf1ff;
- color:#315bea;
- font-size:12px;
- margin:3px;
-}
-.lock{
- text-align:center;
- font-size:28px;
-}
-.small{font-size:13px;color:#697386}
-.score{
- font-size:38px;
- font-weight:bold;
- text-align:center;
- color:#315bea;
+
+h2{
+  margin-top:0;
 }
 </style>
 </head>
@@ -130,7 +138,9 @@ input,select{
 <p id="welcome">Economics • Accounting • ACCA</p>
 </header>
 
+
 <!-- HOME -->
+
 <section id="home" class="page active">
 
 <div class="card">
@@ -147,157 +157,176 @@ input,select{
 
 <div class="card">
 <h2>📊 Student Tools</h2>
-<p class="small">
-Calculate, learn, practice and improve your Economics,
-Accounting and ACCA skills.
-</p>
+<p>Calculate, learn and practice your skills.</p>
 </div>
 
 </section>
 
 
 <!-- CALCULATORS -->
+
 <section id="calculators" class="page">
 
 <div class="card">
+
 <h2>🧮 Calculators</h2>
 
 <h3>Percentage</h3>
+
 <input id="p1" type="number" placeholder="Number">
+
 <input id="p2" type="number" placeholder="Total">
-<button onclick="percentage()">Calculate</button>
-<div id="pr" class="result"></div>
+
+<button onclick="calculatePercentage()">Calculate</button>
+
+<div id="percentageResult" class="result"></div>
+
 
 <hr>
 
-<h3>Grade Percentage</h3>
+<h3>Grade %</h3>
+
 <input id="g1" type="number" placeholder="Marks obtained">
+
 <input id="g2" type="number" placeholder="Total marks">
-<button onclick="grade()">Calculate Grade %</button>
-<div id="gr" class="result"></div>
+
+<button onclick="calculateGrade()">Calculate</button>
+
+<div id="gradeResult" class="result"></div>
+
 
 <hr>
 
 <h3>Profit & Loss</h3>
+
 <input id="buy" type="number" placeholder="Cost price">
+
 <input id="sell" type="number" placeholder="Selling price">
-<button onclick="profit()">Calculate</button>
-<div id="lr" class="result"></div>
+
+<button onclick="calculateProfit()">Calculate</button>
+
+<div id="profitResult" class="result"></div>
+
 
 <hr>
 
 <h3>Cost per Unit</h3>
+
 <input id="cost" type="number" placeholder="Total cost">
-<input id="units" type="number" placeholder="Units">
-<button onclick="unitCost()">Calculate</button>
-<div id="cr" class="result"></div>
+
+<input id="units" type="number" placeholder="Number of units">
+
+<button onclick="calculateUnitCost()">Calculate</button>
+
+<div id="unitResult" class="result"></div>
 
 </div>
+
 </section>
 
 
 <!-- QUIZ -->
+
 <section id="quiz" class="page">
 
 <div class="card" id="quizBox">
+
 <h2>🧠 Daily Quiz</h2>
-<p class="small">Answer the questions and test your knowledge.</p>
+
+<p>Test your Economics knowledge.</p>
 
 <button onclick="startQuiz()">Start Quiz</button>
+
 </div>
 
 </section>
 
 
 <!-- TERMS -->
+
 <section id="terms" class="page">
 
 <div class="card">
-<h2>📚 Economics & Accounting Terms</h2>
+
+<h2>📚 Terms</h2>
 
 <div class="card">
 <b>Revenue</b>
-<p class="small">Income earned from selling goods or services.</p>
+<p>Income earned from selling goods or services.</p>
 </div>
 
 <div class="card">
 <b>Cost</b>
-<p class="small">The resources or money used to produce goods or services.</p>
+<p>The resources or money used to produce goods or services.</p>
 </div>
 
 <div class="card">
 <b>Profit</b>
-<p class="small">Revenue minus total costs.</p>
+<p>Revenue minus total costs.</p>
 </div>
 
 <div class="card">
 <b>Contribution Margin</b>
-<p class="small">Sales revenue minus variable costs.</p>
-</div>
-
-<div class="card">
-<b>Gross Margin</b>
-<p class="small">Gross profit expressed as a percentage of revenue.</p>
+<p>Sales revenue minus variable costs.</p>
 </div>
 
 <div class="card">
 <b>Balance Sheet</b>
-<p class="small">Statement showing assets, liabilities and equity.</p>
+<p>A statement showing assets, liabilities and equity.</p>
 </div>
 
 <div class="card">
 <b>Income Statement</b>
-<p class="small">Statement showing revenue, expenses and profit or loss.</p>
+<p>A statement showing revenue, expenses and profit or loss.</p>
 </div>
 
 </div>
+
 </section>
 
 
 <!-- PREMIUM -->
+
 <section id="premium" class="page">
 
 <div class="card">
-<h2>⭐ Student Pro Premium</h2>
-<p>Unlock advanced study tools.</p>
-</div>
 
-<div class="card">
-<div class="lock">🔒</div>
-<h3>Advanced Costing Calculator</h3>
-<p class="small">Calculate production costs, materials, labour and overhead.</p>
-<button onclick="premiumMessage()">Premium</button>
-</div>
+<h2>⭐ Premium</h2>
 
-<div class="card">
-<div class="lock">📊</div>
-<h3>Excel Templates</h3>
-<p class="small">Income Statement • Balance Sheet • Cost Sheet • Cash Book</p>
-<button onclick="premiumMessage()">Premium</button>
-</div>
+<p>Advanced Student Pro features.</p>
 
-<div class="card">
-<div class="lock">🎓</div>
-<h3>Premium Question Bank</h3>
-<p class="small">More Economics, Accounting and ACCA questions.</p>
-<button onclick="premiumMessage()">Premium</button>
+<h3>🔒 Advanced Costing</h3>
+<p>Production costing and overhead calculations.</p>
+
+<button onclick="showPremium()">Premium</button>
+
+<h3>🔒 Excel Templates</h3>
+<p>Income Statement, Balance Sheet, Cost Sheet and more.</p>
+
+<button onclick="showPremium()">Premium</button>
+
+<h3>🔒 Premium Question Bank</h3>
+<p>Advanced Economics, Accounting and ACCA questions.</p>
+
+<button onclick="showPremium()">Premium</button>
+
 </div>
 
 </section>
 
 
 <!-- PROFILE -->
+
 <section id="profile" class="page">
 
 <div class="card">
-<h2>👤 My Profile</h2>
-<p id="username">Student</p>
-<p class="small">Student Pro learner</p>
-</div>
 
-<div class="card">
-<h3>📈 Quiz Statistics</h3>
-<p id="stats">No quiz completed yet.</p>
+<h2>👤 My Profile</h2>
+
+<p id="profileName">Student</p>
+
+<p>Student Pro learner</p>
+
 </div>
 
 </section>
@@ -306,27 +335,30 @@ Accounting and ACCA skills.
 
 
 <!-- NAVIGATION -->
+
 <div class="nav">
 
-<button onclick="showPage('home')" id="navhome">🏠<br>Home</button>
+<button onclick="showPage('home')">
+🏠<br>Home
+</button>
 
-<button onclick="showPage('calculators')" id="navcalculators">
+<button onclick="showPage('calculators')">
 🧮<br>Calc
 </button>
 
-<button onclick="showPage('quiz')" id="navquiz">
+<button onclick="showPage('quiz')">
 🧠<br>Quiz
 </button>
 
-<button onclick="showPage('terms')" id="navterms">
+<button onclick="showPage('terms')">
 📚<br>Terms
 </button>
 
-<button onclick="showPage('premium')" id="navpremium">
+<button onclick="showPage('premium')">
 ⭐<br>Premium
 </button>
 
-<button onclick="showPage('profile')" id="navprofile">
+<button onclick="showPage('profile')">
 👤<br>Profile
 </button>
 
@@ -335,342 +367,377 @@ Accounting and ACCA skills.
 
 <script>
 
-const tg = window.Telegram?.WebApp;
+/* Telegram */
 
-if(tg){
- tg.ready();
- tg.expand();
+if(window.Telegram && window.Telegram.WebApp){
 
- const user=tg.initDataUnsafe?.user;
+  const tg=window.Telegram.WebApp;
 
- if(user){
-   document.getElementById("welcome").textContent=
-   "Welcome, "+(user.first_name||"Student")+" 👋";
+  tg.ready();
+  tg.expand();
 
-   document.getElementById("username").textContent=
-   (user.first_name||"Student")+" "+(user.last_name||"");
- }
+  if(tg.initDataUnsafe && tg.initDataUnsafe.user){
+
+    const user=tg.initDataUnsafe.user;
+
+    document.getElementById("welcome").textContent=
+    "Welcome, "+(user.first_name || "Student")+" 👋";
+
+    document.getElementById("profileName").textContent=
+    (user.first_name || "Student")+" "+(user.last_name || "");
+
+  }
+
 }
 
 
-/* NAVIGATION */
+/* PAGE NAVIGATION */
 
 function showPage(page){
 
- document.querySelectorAll(".page")
- .forEach(x=>x.classList.remove("active"));
+  const pages=document.querySelectorAll(".page");
 
- document.getElementById(page).classList.add("active");
+  pages.forEach(function(item){
 
- document.querySelectorAll(".nav button")
- .forEach(x=>x.classList.remove("active"));
+    item.classList.remove("active");
 
- const nav=document.getElementById("nav"+page);
+  });
 
- if(nav) nav.classList.add("active");
+  document.getElementById(page).classList.add("active");
 
- window.scrollTo(0,0);
+  window.scrollTo(0,0);
+
 }
 
 
-/* CALCULATORS */
+/* PERCENTAGE */
 
-function percentage(){
+function calculatePercentage(){
 
- let a=Number(document.getElementById("p1").value);
- let b=Number(document.getElementById("p2").value);
+  const number=parseFloat(
+    document.getElementById("p1").value
+  );
 
- if(!b){
-   document.getElementById("pr").textContent="Please enter valid numbers.";
-   return;
- }
+  const total=parseFloat(
+    document.getElementById("p2").value
+  );
 
- document.getElementById("pr").textContent=
- ((a/b)*100).toFixed(2)+"%";
+  if(isNaN(number) || isNaN(total) || total===0){
+
+    document.getElementById("percentageResult").textContent=
+    "Please enter valid numbers.";
+
+    return;
+
+  }
+
+  const result=(number/total)*100;
+
+  document.getElementById("percentageResult").textContent=
+  result.toFixed(2)+"%";
+
 }
 
 
-function grade(){
+/* GRADE */
 
- let a=Number(document.getElementById("g1").value);
- let b=Number(document.getElementById("g2").value);
+function calculateGrade(){
 
- if(!b){
-   document.getElementById("gr").textContent="Please enter valid marks.";
-   return;
- }
+  const marks=parseFloat(
+    document.getElementById("g1").value
+  );
 
- document.getElementById("gr").textContent=
- ((a/b)*100).toFixed(2)+"%";
+  const total=parseFloat(
+    document.getElementById("g2").value
+  );
+
+  if(isNaN(marks) || isNaN(total) || total===0){
+
+    document.getElementById("gradeResult").textContent=
+    "Please enter valid marks.";
+
+    return;
+
+  }
+
+  const result=(marks/total)*100;
+
+  document.getElementById("gradeResult").textContent=
+  result.toFixed(2)+"%";
+
 }
 
 
-function profit(){
+/* PROFIT */
 
- let buy=Number(document.getElementById("buy").value);
- let sell=Number(document.getElementById("sell").value);
+function calculateProfit(){
 
- if(!buy){
-   document.getElementById("lr").textContent="Please enter valid prices.";
-   return;
- }
+  const buy=parseFloat(
+    document.getElementById("buy").value
+  );
 
- let result=sell-buy;
- let percent=(result/buy)*100;
+  const sell=parseFloat(
+    document.getElementById("sell").value
+  );
 
- if(result>0){
-   document.getElementById("lr").textContent=
-   "Profit: "+result.toFixed(2)+" | "+percent.toFixed(2)+"%";
- }else if(result<0){
-   document.getElementById("lr").textContent=
-   "Loss: "+Math.abs(result).toFixed(2)+" | "+Math.abs(percent).toFixed(2)+"%";
- }else{
-   document.getElementById("lr").textContent="No Profit, No Loss";
- }
+  if(isNaN(buy) || isNaN(sell) || buy===0){
+
+    document.getElementById("profitResult").textContent=
+    "Please enter valid prices.";
+
+    return;
+
+  }
+
+  const difference=sell-buy;
+
+  const percentage=(difference/buy)*100;
+
+  if(difference>0){
+
+    document.getElementById("profitResult").textContent=
+    "Profit: "+difference.toFixed(2)+
+    " ("+percentage.toFixed(2)+"%)";
+
+  }else if(difference<0){
+
+    document.getElementById("profitResult").textContent=
+    "Loss: "+Math.abs(difference).toFixed(2)+
+    " ("+Math.abs(percentage).toFixed(2)+"%)";
+
+  }else{
+
+    document.getElementById("profitResult").textContent=
+    "No Profit, No Loss";
+
+  }
+
 }
 
 
-function unitCost(){
+/* UNIT COST */
 
- let cost=Number(document.getElementById("cost").value);
- let units=Number(document.getElementById("units").value);
+function calculateUnitCost(){
 
- if(!units){
-   document.getElementById("cr").textContent="Please enter valid units.";
-   return;
- }
+  const cost=parseFloat(
+    document.getElementById("cost").value
+  );
 
- document.getElementById("cr").textContent=
- "Cost per Unit: "+(cost/units).toFixed(2);
+  const units=parseFloat(
+    document.getElementById("units").value
+  );
+
+  if(isNaN(cost) || isNaN(units) || units===0){
+
+    document.getElementById("unitResult").textContent=
+    "Please enter valid numbers.";
+
+    return;
+
+  }
+
+  const result=cost/units;
+
+  document.getElementById("unitResult").textContent=
+  "Cost per Unit: "+result.toFixed(2);
+
 }
 
 
 /* QUIZ */
 
-let questions=[];
-let currentQuestion=0;
-let score=0;
-let answered=false;
+const quizQuestions=[
 
+{
+question:"What is opportunity cost?",
+options:[
+"The total money spent",
+"The next best alternative given up",
+"The selling price",
+"The amount of profit"
+],
+answer:1,
+explanation:"Opportunity cost is the value of the next best alternative that is sacrificed."
+},
 
-/* Load questions.json */
+{
+question:"What does GDP measure?",
+options:[
+"Population",
+"Final goods and services produced within a country",
+"Exports only",
+"Government revenue"
+],
+answer:1,
+explanation:"GDP measures the value of final goods and services produced within a country's borders."
+},
 
-async function loadQuestions(){
-
- try{
-
-   const response=await fetch("./questions.json");
-
-   if(!response.ok) throw new Error("Questions file not found");
-
-   questions=await response.json();
-
- }catch(error){
-
-   console.log(error);
-
-   document.getElementById("quizBox").innerHTML=`
-   <h2>🧠 Daily Quiz</h2>
-   <div class="result">
-   ⚠️ Questions could not be loaded.
-   <br><br>
-   Please make sure <b>questions.json</b> is saved in the same folder as index.html.
-   </div>
-   `;
- }
+{
+question:"What is inflation?",
+options:[
+"A general increase in prices",
+"A general decrease in prices",
+"An increase in population",
+"A decrease in production"
+],
+answer:0,
+explanation:"Inflation is a sustained increase in the general price level."
 }
 
+];
 
-loadQuestions();
 
-const data=await response.json();
-questions=data.questions || data;
+let currentQuestion=0;
+
+let quizScore=0;
+
+let quizAnswered=false;
+
+
 function startQuiz(){
 
- if(!questions.length){
+  currentQuestion=0;
 
-   document.getElementById("quizBox").innerHTML=`
-   <h2>🧠 Daily Quiz</h2>
-   <div class="result">
-   Questions are loading. Please try again.
-   </div>
-   `;
+  quizScore=0;
 
-   loadQuestions();
-   return;
- }
+  showQuestion();
 
- currentQuestion=0;
- score=0;
- answered=false;
-
- showQuestion();
 }
 
 
 function showQuestion(){
 
- const q=questions[currentQuestion];
+  const q=quizQuestions[currentQuestion];
 
- answered=false;
+  quizAnswered=false;
 
- let html=`
+  let html="";
 
- <h2>🧠 Daily Quiz</h2>
+  html+="<h2>🧠 Daily Quiz</h2>";
 
- <span class="badge">${q.category}</span>
- <span class="badge">${q.difficulty}</span>
+  html+="<p>Question "+(currentQuestion+1)+
+  " of "+quizQuestions.length+"</p>";
 
- <p class="small">
- Question ${currentQuestion+1} of ${questions.length}
- </p>
+  html+="<h3>"+q.question+"</h3>";
 
- <h3>${q.question}</h3>
- `;
+  for(let i=0;i<q.options.length;i++){
 
- q.options.forEach((option,index)=>{
+    html+=
+    '<button class="option" onclick="answerQuestion('+i+')">'+
+    q.options[i]+
+    '</button>';
 
-   html+=`
-   <button
-   class="option"
-   onclick="answerQuestion(${index})"
-   id="option${index}">
-   ${String.fromCharCode(65+index)}. ${option}
-   </button>
-   `;
- });
+  }
 
- html+=`<div id="explanation"></div>`;
+  html+='<div id="quizExplanation"></div>';
 
- document.getElementById("quizBox").innerHTML=html;
+  document.getElementById("quizBox").innerHTML=html;
+
 }
 
 
 function answerQuestion(selected){
 
- if(answered) return;
+  if(quizAnswered) return;
 
- answered=true;
+  quizAnswered=true;
 
- const q=questions[currentQuestion];
+  const q=quizQuestions[currentQuestion];
 
- const buttons=document.querySelectorAll(".option");
+  const buttons=document.querySelectorAll(".option");
 
- buttons.forEach((button,index)=>{
+  buttons[q.answer].classList.add("correct");
 
-   if(index===q.answer){
-     button.classList.add("correct");
-   }
+  if(selected===q.answer){
 
-   if(index===selected && index!==q.answer){
-     button.classList.add("wrong");
-   }
+    quizScore++;
 
- });
+  }else{
 
- if(selected===q.answer){
-   score++;
- }
+    buttons[selected].classList.add("wrong");
 
- document.getElementById("explanation").innerHTML=`
+  }
 
- <div class="result">
+  let html="";
 
- <b>${selected===q.answer ? "✅ Correct!" : "❌ Incorrect"}</b>
+  if(selected===q.answer){
 
- <p>${q.explanation}</p>
+    html+="<div class='result'>✅ Correct!<br><br>";
 
- <button onclick="nextQuestion()">
- ${currentQuestion+1===questions.length ? "Finish Quiz" : "Next Question →"}
- </button>
+  }else{
 
- </div>
+    html+="<div class='result'>❌ Incorrect<br><br>";
 
- `;
+  }
+
+  html+=q.explanation;
+
+  html+="<br><br>";
+
+  html+="<button onclick='nextQuestion()'>";
+
+  if(currentQuestion===quizQuestions.length-1){
+
+    html+="Finish Quiz";
+
+  }else{
+
+    html+="Next Question →";
+
+  }
+
+  html+="</button>";
+
+  html+="</div>";
+
+  document.getElementById("quizExplanation").innerHTML=html;
+
 }
 
 
 function nextQuestion(){
 
- currentQuestion++;
+  currentQuestion++;
 
- if(currentQuestion>=questions.length){
+  if(currentQuestion>=quizQuestions.length){
 
-   finishQuiz();
+    finishQuiz();
 
- }else{
+  }else{
 
-   showQuestion();
+    showQuestion();
 
- }
+  }
+
 }
 
 
 function finishQuiz(){
 
- const percent=(score/questions.length)*100;
+  const percent=
+  (quizScore/quizQuestions.length)*100;
 
- localStorage.setItem("lastQuizScore",score);
- localStorage.setItem("lastQuizTotal",questions.length);
+  document.getElementById("quizBox").innerHTML=
 
- document.getElementById("quizBox").innerHTML=`
+  "<h2>🎉 Quiz Complete!</h2>"+
+  "<div class='result'>"+
+  "Score: "+quizScore+" / "+quizQuestions.length+
+  "<br><br>"+
+  percent.toFixed(0)+"%"+
+  "</div>"+
+  "<br>"+
+  "<button onclick='startQuiz()'>Try Again</button>";
 
- <h2>🎉 Quiz Complete!</h2>
-
- <div class="score">
- ${score}/${questions.length}
- </div>
-
- <p style="text-align:center">
- ${percent.toFixed(0)}%
- </p>
-
- <div class="result">
-
- ${
- percent>=80
- ? "🌟 Excellent work!"
- : percent>=60
- ? "👍 Good job! Keep studying."
- : "📚 Keep practicing. You can improve!"
- }
-
- </div>
-
- <br>
-
- <button onclick="startQuiz()">Try Again</button>
-
- `;
-
- updateStats();
 }
-
-
-function updateStats(){
-
- const score=localStorage.getItem("lastQuizScore");
- const total=localStorage.getItem("lastQuizTotal");
-
- if(score!==null){
-
-   document.getElementById("stats").textContent=
-   "Last Quiz: "+score+" / "+total;
- }
-}
-
-
-updateStats();
 
 
 /* PREMIUM */
 
-function premiumMessage(){
+function showPremium(){
 
- alert(
- "⭐ Premium features are coming soon.\n\n" +
- "Telegram Stars payment will be added in a later stage."
- );
+  alert(
+  "⭐ Premium features will be available soon."
+  );
 
 }
 
